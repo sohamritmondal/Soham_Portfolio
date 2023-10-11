@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!-- Soham Rit creation-->
+
+<!-- preloading page margin problem
+   hireme button
+  services read me
+   contact me data store 
+  project github
+  header sticky
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham's Portfolio</title>
+    <link rel="stylesheet" href="soham.css">
+    
+</head>
+<body id="x">
+  
+
+</body>
+<body >
+  <!----------------------------preloader----------------------------------------->
+  <div id="preloader"></div>
+
+   
+   <!----------------------------preloader----------------------------------------->
+
+
+  
+   <button id="backToTopBtn" class="hidden" onclick="scrollToTop()"><i class="fas fa-angle-up"></i></button>
+  
+  
+  <script>
+   function checkScroll() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    if (window.pageYOffset > 100) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+window.addEventListener("scroll", checkScroll);
+</script>
+
+
+</div></a>
+    <header>
+        <div id="mydiv">
+            <nav class="navber">
+                <div class="left"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soham's Portfolio</div>
+                <div class="right">
+                    <ul>
+                        <li  class="home"><a id="blue" href="#h1">Home</a></li></span>
+                        <li  class="about"><a id="blue" href="#a1">About</a></li>
+                        <li  class="skills"><a id="blue" href="#s2">Skills</a></li>
+                        <li  class="services"><a id="blue" href="#s1">Services</a></li>
+                        <li  class="contact"><a id="blue" href="#c1">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+<!----------------------------------------------Home------------------------------------------------>
+            <section class="_home" id="home"><a id="h1"></a>
+                                
+                    <div class="firstSection">
+
+                        <div class="leftsection">
+                            <div class="text"><b>Hello,<br><br>I'm Soham Mondal and I'm a <span id="element1"></span></b></div><br><br>
+                            <p align="justify"><span id="element2"></span></p><br><br><br>
+                            <a href="Soham_Mondal_cv.pdf" class="btn btn2" id="yellow">Download CV</a> &nbsp;  &nbsp; &nbsp;
+                            <a href="#c1" id="yellow"class="btn btn2">Contact Me</a> &nbsp;&nbsp;  &nbsp;
+                            <a href="#" id="yellow" class="btn btn2">Hire Me</a>
+                        </div>
+
+                                            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+                                            <script>
+                                            var typed = new Typed('#element2', {
+                                            strings: ['I am a computer science student at New Horizon College of engineering with a CGPA of 8.38, proficient in JavaScript, React, Node.js, web development, app development, Java, Python, C++, and data structures.'],
+                                            typeSpeed: 20,
+                                            });
+                                        
+                                        
+                                            var typed = new Typed('#element1', {
+                                            strings: ['Software Developer'],
+                                            typeSpeed: 50,
+                                            });
+                                            </script>
+
+                        <div class="rightSection">
+                            <img src="yz.png " alt="" width="68%" >
+                        </div>
+                       
+                    </div>    
+            </section>
+    </header>
+<!----------------------------------------------about------------------------------------------------->
+    <main>
+      
+      <section class="_about"><a id="a1"></a>
+        
+              <div id="about">
+                  <div class="container">
+                      <h1 align="center" id="ha"><b>About  &nbsp;Me</b></h1>
+                      <p align="center" id="pa"><b>__who i am__</b></p><br><br><br><br>
+                    <div class="row">
+                      <div class="about-col-1">
+                        <img src="about.png" alt style="width:100% height=50%" >
+                      </div>
+                      <div class="about-col-2">
+                        
+                        <p align="justify">I am currently pursuing a degree in computer science at New Horizon College of Engineering, where I have maintained a CGPA of 8.38. My areas of expertise include JavaScript, React, Node.js, web development, and app development. Additionally, I am proficient in programming languages such as Java, Python, and C++, and I have a strong understanding of data structures.</p>
+                          <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')"><b><a id="s2"></a>Skills</b></p>
+                            <p class="tab-links"onclick="opentab('experience')"><b>Experience</b></p>
+                            <p class="tab-links"onclick="opentab('education')"><b>Education</b></p>
+                            <p class="tab-links"onclick="opentab('project')"><b>Projects</b></p>
+                          </div>
+                          <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                              <li><span>Web Development</span><br>Developing a Webpages & Interfaces</li>
+                              <li><span>Programming Languages</span><br>Java<br>Python<br>C++<br> c<br>JavaScript<br>HTML<br>CSS</li>
+                            </ul>
+                          </div>
+                          <div class="tab-contents" id="experience">
+                            <ul>
+                              <li><span>2022</span><br>IEEE member </li>
+                              <li><span>2022 June-August</span><br>Internship at AcmeGrade</li>
+                              
+                            </ul>
+                          </div>
+                          <div class="tab-contents" id="education">
+                            <ul>
+                              <li><span>2021-2025</span><br>New Horizon College of Engineering</li>
+                              <li><span>2019-2021 </span><br>Katwa Bharati Bhaban High School</li>
+                              <li><span>2012-2019</span><br>Chanduli High School</li>
+                            </ul>
+                          </div>
+                          <div>
+                          <div class="tab-contents" id="project">
+                            <a  id="zup" href="https://github.com/sohamritmondal" target="_blank" class="hvr-wobble-vertical" >
+                              <i  title="Github" class="fab fa-github"></i></a>
+                              <p >Open Repositorie</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+
+        <script>
+          var tablinks = document.getElementsByClassName("tab-links");
+          var tabcontents = document.getElementsByClassName("tab-contents");
+          function opentab(tabname){
+            for(tablink of tablinks){
+              tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+              tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+
+
+          }
+          </script>
+  <!----------------------------------------------------------Services--------------------------------------------------------------->
+            <div align="center" class="m1"><a id="s1"></a>
+              <h1 align="center" id="hb"><b>What Services I'm Providing</b></h1>
+            
+                  <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+                
+                  <div class="container">
+                      
+                    <div class="card">
+                      <div class="face face1">
+                        <div class="content">
+                          <i class="fas fa-paint-brush"></i>          
+                          <h3>Data Structure <br>and<br> Algorithm Consultancy</h3>
+                        </div>
+                      </div>
+                      <div class="face face2">
+                        <div class="content">
+                          <p> I offer professional Data Structure and Algorithm Consultancy services, leveraging my expertise in various programming languages like Java, Python, C and C++.…</p>
+                          <a href="#" type="button">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="card">
+                      <div class="face face1">
+                        <div class="content">
+                          <i class="fas fa-code"></i>
+                                    <h3>Expert Custom<br> Web Development Services</h3>
+                        </div>
+                      </div>
+                      <div class="face face2">
+                        <div class="content">
+                          <p> I provide custom web development services, utilizing my expertise in JavaScript, React, Node.js, and various programming languages to create tailored solutions for clients.</p>
+                          <a href="#" type="button">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="card">
+                      <div class="face face1">
+                        <div class="content">
+                          <i class="fas fa-pen-nib"></i>  
+                            <h3>Cloud Computing <br>and<br> Security</h3>
+                        </div>
+                      </div>
+                      <div class="face face2">
+                        <div class="content">
+                          <p> Cloud computing is a technology that enables users to access and utilize computing resources over the internet. While it offers scalability and convenience, its security is a concern. Data breaches, unauthorized access, and compliance issues are potential risks. Robust encryption, access controls, and regular audits are crucial for safeguarding cloud-based assets.</p>
+                          <a href="#" type="button">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                
+                  </div>
+              </div>
+
+          <!--------------------------------------contact---------------------------------------------------->
+
+          <br><h1 id="con" align="center" ><b><u>Contact Me</u></b></h2><br><br><br><br><br><br> <br>
+          <section class="contact" id="contact"><a id="c1"></a>
+              <div class="max-width">
+                
+                  <div class="contact-content">
+                      <div class="row">
+                          <div row="column left">
+                              <i id="red" class="fas fa-user"></i><h1>Soham Mondal</h1>
+                              <i id="red"  class="fas fa-envelope"></i><h3>sohamritmondal@gmail.com</h3>
+                              <i id="red"  class="fas fa-map-marker-alt"></i><h1>Bengaluru,Karnataka</h1>
+                              
+                          </div>
+                          <div class="column right">
+                              <div class="text"><b>Message me</b></div>
+                              <form action="#">
+                                  <div class="fields">
+                                      <div class="field name">
+                                          <input type="text" placeholder="Name" required>
+                                      </div>
+                                      <div class="field email">
+                                          <input type="email" placeholder="Email" required>
+                                      </div>
+                                  </div>
+                                  <div class="field">
+                                      <input type="text" placeholder="Subject" required>
+                                  </div>
+                                  <div class="field textarea">
+                                      <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                                  </div>
+                                  <div class="button-area">
+                                      <button type="submit">Send message</button>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <br><br><br><br><br> <br>
+
+          </main>
+          <footer>
+
+          <!------------------------------------------copyright bar----------------------------------------->
+
+          <div class="cop">
+          </section>
+          
+            <p align="center">  <a id="white" href="https://www.linkedin.com/in/soham-mondal-939511230" target="_blank" class="hvr-wobble-vertical" title="Linkedin Profile">
+              <i title="Linkedin" class="fab fa-linkedin-in"></i>
+            </a>
+            <a id="white" href="https://instagram.com/sohamritmondal?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="hvr-wobble-vertical" title="Linkedin Profile">
+              <i title="Instagram" class="fab fa-instagram"></i>
+              <a id="white" href="" target="_blank" class="hvr-wobble-vertical" title="Linkedin Profile">
+                <i title="Twitter" class="fab fa-twitter"></i>
+                <a id="white" href="https://github.com/sohamritmondal" target="_blank" class="hvr-wobble-vertical" title="Linkedin Profile">
+                  <i title="Github" class="fab fa-github"></i>
+                  <a id="white" href="https://t.me/SOHAMRIT" target="_blank" class="hvr-wobble-vertical" title="Linkedin Profile">
+                    <i title="Telegram" class="fas fa-paper-plane"></i>
+                
+            </a><br>Created By @Soham_Mondal |© All rights reserved.</p>
+          </div>
+          </footer>
+
+          <script>
+            var loader =document.getElementById("preloader");
+            window.addEventListener('load',function(){
+              loader.style.display ="none";
+            })
+          </script>
+        
+
+          </body>
+          </html>
