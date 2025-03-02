@@ -55,33 +55,41 @@ window.addEventListener("scroll", checkScroll);
 </script>
 
 
-</div></a>
-    <header>
-        <div id="mydiv">
-            <nav class="navber">
-                <div class="left"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soham's Portfolio</div>
-                <div class="right">
-                    <ul>
-                        <li  class="home"><a id="blue" href="#h1">Home</a></li></span>
-                        <li  class="about"><a id="blue" href="#a1">About</a></li>
-                        <li  class="skills"><a id="blue" href="#s2">Skills</a></li>
-                        <li  class="services"><a id="blue" href="#s1">Services</a></li>
-                        <li  class="contact"><a id="blue" href="#c1">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>    
+<div id="mydiv">
+  <nav class="navbar">
+      <div class="left">
+          <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Soham's Portfolio
+      </div>
+      <div class="right">
+          <ul id="nav-links">
+              <li class="home"><a id="blue" href="#h1">Home</a></li>
+              <li class="about"><a id="blue" href="#a1">About</a></li>
+              <li class="skills"><a id="blue" href="#s2">Skills</a></li>
+              <li class="services"><a id="blue" href="#s1">Services</a></li>
+              <li class="contact"><a id="blue" href="#c1">Contact</a></li>
+          </ul>
+      </div>
+  </nav>
+</div>
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("nav-links");
+    menu.classList.toggle("active");
+}
+
+</script>
 <!----------------------------------------------Home------------------------------------------------>
             <section class="_home" id="home"><a id="h1"></a>
                                 
                     <div class="firstSection">
 
                         <div class="leftsection">
-                            <div class="text"><b>Hello,<br><br>I'm Soham Mondal and I'm a <span id="element1"></span></b></div><br><br>
+                            <div class="text"><b>Hello,<br><br>I'm Soham Mondal <br><br> I'm a <span id="element1"></span></b></div><br><br>
                             <p align="justify"><span id="element2"></span></p><br><br><br>
-                            <a href="Soham_Mondal_cv.pdf" class="btn btn2" id="yellow">Download CV</a> &nbsp;  &nbsp; &nbsp;
+                            <a href="Soham_Mondal_cv.pdf" class="btn btn2" id="yellow">Download CV</a> &nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;
                             <a href="#c1" id="yellow"class="btn btn2">Contact Me</a> &nbsp;&nbsp;  &nbsp;
-                            <a href="#" id="yellow" class="btn btn2">Hire Me</a>
+                            
                         </div>
 
                                             <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -99,7 +107,7 @@ window.addEventListener("scroll", checkScroll);
                                             </script>
 
                         <div class="rightSection">
-                            <img src="yz.png " alt="" width="68%" >
+                            <img align="center" src="yz.jpg" alt="" width="73%" >
                         </div>
                        
                     </div>    
@@ -111,15 +119,20 @@ window.addEventListener("scroll", checkScroll);
       <section class="_about"><a id="a1"></a>
         
               <div id="about">
+                
                   <div class="container">
-                      <h1 align="center" id="ha"><b>About  &nbsp;Me</b></h1>
-                      <p align="center" id="pa"><b>__who i am__</b></p><br><br><br><br>
+
+                  </div id="z">
+                    <h1 align="center" id="ha"><b>About  &nbsp;Me</b></h1>
+                    <p align="center" id="pa"><b>__who i am__</b></p>
+</div>
+
                     <div class="row">
                       <div class="about-col-1">
-                        <img src="about.png" alt style="width:100% height=50%" >
+                        <img src="about.jpg" alt style="width:50% height=50%" >
                       </div>
+
                       <div class="about-col-2">
-                        
                         <p align="justify">I am currently pursuing a degree in computer science at New Horizon College of Engineering, where I have maintained a CGPA of 8.38. My areas of expertise include JavaScript, React, Node.js, web development, and app development. Additionally, I am proficient in programming languages such as Java, Python, and C++, and I have a strong understanding of data structures.</p>
                           <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')"><b><a id="s2"></a>Skills</b></p>
@@ -234,18 +247,23 @@ window.addEventListener("scroll", checkScroll);
 
           <!--------------------------------------contact---------------------------------------------------->
 
-          <br><h1 id="con" align="center" ><b><u>Contact Me</u></b></h2><br><br><br><br><br><br> <br>
-          <section class="contact" id="contact"><a id="c1"></a>
+          <br><h1 id="con" align="center" ><b><u>Contact Me</u></b></h2><br><br>
+          <section class="contact" align="center" id="contact"><a id="c1"></a>
               <div class="max-width">
                 
                   <div class="contact-content">
                       <div class="row">
-                          <div row="column left">
-                              <i id="red" class="fas fa-user"></i><h1>Soham Mondal</h1>
-                              <i id="red"  class="fas fa-envelope"></i><h3>sohamritmondal@gmail.com</h3>
-                              <i id="red"  class="fas fa-map-marker-alt"></i><h1>Bengaluru,Karnataka</h1>
-                              
+                        <div class="column left">
+                          <div class="info">
+                              <i id="red" class="fas fa-user"></i> <h3>Soham Mondal</h3>
                           </div>
+                          <div class="info">
+                              <i id="red" class="fas fa-envelope"></i> <h3>sohamritmondal@gmail.com</h3>
+                          </div>
+                          <div class="info">
+                              <i id="red" class="fas fa-map-marker-alt"></i> <h3>Bengaluru, Karnataka</h3>
+                          </div>
+                      </div>
                           <div class="column right">
                               <div class="text"><b>Message me</b></div>
                               <form action="#">
@@ -263,6 +281,8 @@ window.addEventListener("scroll", checkScroll);
                                   <div class="field textarea">
                                       <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
                                   </div>
+                                  <br>
+                                  <br>
                                   <div class="button-area">
                                       <button type="submit">Send message</button>
                                   </div>
@@ -273,8 +293,7 @@ window.addEventListener("scroll", checkScroll);
               </div>
           </section>
 
-          <br><br><br><br><br> <br>
-
+          <br>
           </main>
           <footer>
 
