@@ -59,8 +59,10 @@ window.addEventListener("scroll", checkScroll);
   <nav class="navbar">
       <div class="left">
           <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Soham's Portfolio
+         <p class="portfolio-text">Soham's Portfolio</p>
       </div>
+      
+    
       <div class="right">
           <ul id="nav-links">
               <li class="home"><a id="blue" href="#h1">Home</a></li>
@@ -84,25 +86,31 @@ window.addEventListener("scroll", checkScroll);
                                 
                     <div class="firstSection">
 
-                        <div class="leftsection">
-                            <div class="text"><b>Hello,<br><br>I'm Soham Mondal <br><br> I'm a <span id="element1"></span></b></div><br><br>
-                            <p align="justify"><span id="element2"></span></p><br><br><br>
-                            <a href="Soham_Mondal_cv.pdf" class="btn btn2" id="yellow">Download CV</a> &nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;
-                            <a href="#c1" id="yellow"class="btn btn2">Contact Me</a> &nbsp;&nbsp;  &nbsp;
-                            
-                        </div>
+                      <div class="leftsection">
+                        <div class="text">
+                            <b>Hello,<br><br> I'm <span class="name">Soham Mondal</span> <br><br> I'm a <span id="element1"></span></b>
+                        </div><br><br>
+                        <p align="justify"><span id="element2"></span></p><br><br><br>
+                        <a href="Soham_Mondal_cv.pdf" class="btn btn2" id="yellow">Download CV</a> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+                        <a href="#c1" id="yellow" class="btn btn2">Contact Me</a> &nbsp;&nbsp;  &nbsp;
+                    </div>
+                    
 
                                             <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
                                             <script>
                                             var typed = new Typed('#element2', {
-                                            strings: ['I am a computer science student at New Horizon College of engineering with a CGPA of 8.38, proficient in JavaScript, React, Node.js, web development, app development, Java, Python, C++, and data structures.'],
+                                            strings: ['I am a computer science student at New Horizon College of engineering with a CGPA of 8.88, proficient in JavaScript, React, Node.js, web development, app development, Java, Python, C++, and data structures.'],
                                             typeSpeed: 20,
                                             });
                                         
                                         
                                             var typed = new Typed('#element1', {
-                                            strings: ['Software Developer'],
+                                            strings: ['Oracle DBA','Software Developer'],
                                             typeSpeed: 50,
+                                            loop: true,   
+                                            backDelay: 1000, 
+                                            backSpeed: 50,
+                                            
                                             });
                                             </script>
 
@@ -133,7 +141,7 @@ window.addEventListener("scroll", checkScroll);
                       </div>
 
                       <div class="about-col-2">
-                        <p align="justify">I am currently pursuing a degree in computer science at New Horizon College of Engineering, where I have maintained a CGPA of 8.38. My areas of expertise include JavaScript, React, Node.js, web development, and app development. Additionally, I am proficient in programming languages such as Java, Python, and C++, and I have a strong understanding of data structures.</p>
+                        <p align="justify">I am currently pursuing a degree in computer science at New Horizon College of Engineering, where I have maintained a CGPA of 8.88. My areas of expertise include JavaScript, React, Node.js, web development, and app development. Additionally, I am proficient in programming languages such as Java, Python, and C++, and I have a strong understanding of data structures.</p>
                           <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')"><b><a id="s2"></a>Skills</b></p>
                             <p class="tab-links"onclick="opentab('experience')"><b>Experience</b></p>
@@ -265,7 +273,7 @@ window.addEventListener("scroll", checkScroll);
                           </div>
                       </div>
                           <div class="column right">
-                              <div class="text"><b>Message me</b></div>
+                              <div class="text"><b>Message me</b></div><br><br>
                               <form action="#">
                                   <div class="fields">
                                       <div class="field name">
