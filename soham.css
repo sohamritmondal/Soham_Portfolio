@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
   padding: 0;
   box-sizing: border-box;
@@ -176,6 +178,76 @@ form .btn2 {
 
 
 /*-------------------------------nav bar------------------------------------*/
+/* Styling for the portfolio text */
+.portfolio-text {
+  font-size: 36px; /* Font size for the text */
+  color: #333; /* Initial color */
+  font-family: 'Arial', sans-serif; /* Font style */
+  display: inline-block; /* Keeps text next to the icon */
+  position: relative; /* For positioning the underline */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover effect for the portfolio text */
+.portfolio-text:hover {
+  color: #007bff; /* Changes text color to blue on hover */
+}
+
+/* Add an animated underline */
+.portfolio-text::after {
+  content: ''; /* Creates the underline */
+  position: absolute; /* Position the underline */
+  left: 0;
+  bottom: -5px; /* Position it slightly below the text */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #007bff; /* Blue color for the underline */
+  transform: scaleX(0); /* Start with no underline */
+  transform-origin: bottom right; /* Starts animation from right */
+  transition: transform 0.3s ease; /* Smooth underline animation */
+}
+
+/* When hovering, the underline will animate */
+.portfolio-text:hover::after {
+  transform: scaleX(1); /* Expands the underline */
+  transform-origin: bottom left; /* Ends animation at left */
+}
+
+/* Styling for the menu icon */
+.menu-icon {
+  font-size: 30px; /* Set icon size */
+  color: #ffffff; /* Icon color */
+  cursor: pointer; /* Makes it clickable */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+/* Animation for the icon */
+.menu-icon:hover {
+  transform: rotate(180deg); /* Rotates the icon on hover */
+  color: #007bff; /* Changes icon color to blue on hover */
+}
+
+/* Styling for the portfolio text */
+.portfolio-text {
+  font-size: 36px; /* Font size for the text */
+  color: #ffffff; /* Initial color */
+  font-family: 'Arial', sans-serif; /* Font style */
+  display: inline-block; /* Keeps text next to the icon */
+  transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease; /* Smooth transition */
+}
+
+/* Animation for the portfolio text */
+.portfolio-text:hover {
+  background: linear-gradient(to right, #ff7f50, #47ffa6); /* Bright coral to red gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  color: transparent; /* Make the text color transparent to show the gradient */
+  font-weight: bold;/* Changes text color to blue on hover */
+  transform: translateX(10px); /* Slightly moves the text to the right */
+  letter-spacing: 2px; /* Adds space between the letters on hover */
+}
+
+
+
 
 /* Default Navbar */
 #mydiv {
@@ -227,30 +299,36 @@ form .btn2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
+  .menu-icon {
+      display: block;
+      text-align: center; /* Centers the icon */
+  }
 
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        background-color: rgb(14, 14, 82);
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        text-align: center;
-        padding: 20px 0;
-    }
+  .navbar ul {
+      display: none;
+      flex-direction: column;
+      background-color:rgba(165, 42, 42, 0.7); /* Soft dark gray with 60% transparency */
 
-    .navbar ul.active {
-        display: flex;
-    }
+      width: 80%;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%); /* Centers the menu */
+      text-align: center;
+      padding: 20px 0;
+      border-radius: 10px; /* Soft rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
 
-    .navbar ul li {
-        margin: 15px 0;
-    }
+  .navbar ul.active {
+      display: flex;
+  }
+
+  .navbar ul li {
+      margin: 15px 0;
+  }
 }
+
 
 
 
@@ -262,6 +340,26 @@ body {
 #home {
   background-color: rgb(139, 139, 139);
 }
+
+/* Style for element1 */
+#element1 {
+  background: linear-gradient(to right, #ff7f50, #47ffa6); /* Bright coral to red gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  color: transparent; /* Make the text color transparent to show the gradient */
+  font-weight: bold; /* Makes the text bold */
+   /* Adjust font size for better visibility */
+}
+
+/* For the text "Soham Mondal" */
+.name {
+  background: linear-gradient(to right, #ff7f50, #47ffa6); /* Bright gradient (coral to tomato red) */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  color: transparent; /* Make the text transparent to show the gradient */
+  font-weight: bold; /* Makes the text bold */
+  /* Adjust font size to match */
+}
+
+
 
 /* Header */
 .header {
@@ -386,6 +484,18 @@ nav ul li {
   margin: auto;
   text-align: center;
 }
+#ha:hover {
+  color: #007bff; /* Changes text color to blue on hover */
+  transform: scale(1.1); /* Slightly increases the size of the text */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+#pa:hover {
+  color: #ff6347; /* Changes text color to tomato red on hover */
+  transform: scale(1.05); /* Slightly enlarges the text */
+  font-weight: bold; /* Makes the text bold on hover */
+  transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease; /* Smooth transition */
+}
 
 h1#ha {
   font-family: Arial, Helvetica, sans-serif;
@@ -450,7 +560,7 @@ font-size: 80px;
 /* Tabs */
 .tab-titles {
   display: flex;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .tab-links {
@@ -510,6 +620,19 @@ font-size: 80px;
   /*-----------------------------services--------------------------------------------------*/
   .m1 {
     margin-top: 0%;
+}
+#hb {
+  font-family: 'Arial', sans-serif; /* Sets the font to Arial */
+  font-size: 36px; /* Sets the font size */
+  color: #333; /* Initial color */
+  text-align: center; /* Centers the text */
+  margin: 30px auto; /* Adds margin at the top and bottom */
+  transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transitions for color and scaling */
+}
+
+#hb:hover {
+  color: #007bff; /* Changes text color to blue when hovered */
+  transform: scale(1.05); /* Slightly enlarges the text when hovered */
 }
 
 /* Container */
