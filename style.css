@@ -1,6 +1,6 @@
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -84,15 +84,15 @@ section .title::after{
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 30px 0;
+    padding: 15px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
-    background: crimson;
+    background: linear-gradient(to right, #033a66, #e91e63, #770d31);
 }
 
 .navbar.sticky{
     padding: 15px 0;
-    background: crimson;
+    background: linear-gradient(to right, #033a66, #e91e63, #770d31);
 }
 .navbar .max-width{
     display: flex;
@@ -100,10 +100,13 @@ section .title::after{
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: #fff;
+    background: linear-gradient(to right, #7ae9a3, #d1b5bd, #eddb87);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 30px;
     font-weight: 600;
 }
+
 .navbar .logo a span{
     color: rgb(255, 255, 255);
     transition: all 0.3s ease;
@@ -125,7 +128,7 @@ section .title::after{
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
-    color: rgb(97, 20, 220);
+    color: rgb(67, 20, 220);
     font-weight: bold;
 }
 .navbar.sticky .menu li a:hover{
@@ -143,7 +146,7 @@ section .title::after{
     position: fixed;
     height: 45px;
     width: 42px;
-    background: crimson;
+    background:linear-gradient(to right, #2196f3, #e91e63);
     right: 30px;
     bottom: 10px;
     text-align: center;
@@ -171,9 +174,9 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background: url("h3.jpeg") no-repeat center;
     height: 100vh;
-    color: #fff;
+    color: #ffffff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
@@ -199,25 +202,42 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: crimson;
+    color: rgb(211, 255, 108);
     font-weight: 500;
 }
-.home .home-content a{
+.home .home-content a {
     display: inline-block;
-    background: crimson;
+    background: linear-gradient(to right, #2196f3, #e91e63);
     color: #fff;
-    font-size: 25px;
-    padding: 12px 36px;
+    font-size: 20px;  /* Reduced from 25px */
+    padding: 5px 18px; /* Reduced padding */
     margin-top: 20px;
+    margin-right: 15px; /* Adds space between buttons */
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid ;
     transition: all 0.3s ease;
 }
+
+/* Adds vertical spacing if the <a> tags are stacked */
+.home .home-content a:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 .home .home-content a:hover{
     color: crimson;
     background: none;
 }
+
+
+
+
+
+
+
+
+
+
 
 /* about section styling */
 .about .title::after{
@@ -226,12 +246,24 @@ section .title::after{
 .about .about-content .left{
     width: 45%;
 }
-.about .about-content .left img{
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
+.about .about-content .left img {
+    max-width: 100%;  /* Ensures image does not exceed container width */
+    max-height: 500px; /* Limits the height to prevent oversized display */
+    width: auto;  /* Maintains aspect ratio */
+    height: auto; /* Ensures it scales proportionally */
+    object-fit: cover; /* Ensures the image covers the container properly */
     border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
+
+
+
+.about .about-content .left img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 .about .about-content .right{
     width: 55%;
 }
@@ -565,8 +597,8 @@ footer span a:hover{
 /* responsive media query start */
 @media (max-width: 1104px) {
     .about .about-content .left img{
-        height: 350px;
-        width: 350px;
+        height: 600px;
+        width: 370px;
     }
 }
 
