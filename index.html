@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Soham's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -173,9 +173,9 @@
           <h3 class="resume-title">Sumary</h3>
           <div class="resume-item pb-0">
             <h4>Soham Mondal</h4>
-            <p style="text-align: justify;"><em>A detail-oriented Oracle DBA Intern with hands-on experience in database management, cloud solutions, and automation.  
-                Currently pursuing a B.E. in Computer Science and Engineering from NHCE with a CGPA of 8.88.  
-                Skilled in Java, PowerShell scripting, and website development, with a passion for problem-solving and innovation.  
+            <p style="text-align: justify;"><em>A detail-oriented<strong> Oracle DBA</strong> Intern with hands-on experience in database management, cloud solutions, and automation.  
+                Currently pursuing a B.E. in Computer Science and Engineering from NHCE with a <strong>CGPA of 8.88</strong>.  
+                Skilled in<strong>Java, PowerShell scripting, and website development</strong>, with a passion for problem-solving and innovation.  
                 Explore my resume to learn more about my skills, education, experience, and projects.</em></p>
             <ul>
               <li>Bangaluru,Karnataka,India</li>
@@ -396,26 +396,42 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form method="post" action="https://script.google.com/macros/s/AKfycby_S7A8v_Rgg7a6eGySgg3ID62lUMo35Wk7RiW4oGxSNYrwWCC6B-zKJVzFpkey115W/exec" name="Contact-form">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" name="NAME"" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" name="EMAIL" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" name="SUBJECT" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" name="MESSAGE" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
                         </div>
                     </form>
                 </div>
+                <script>
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycby_S7A8v_Rgg7a6eGySgg3ID62lUMo35Wk7RiW4oGxSNYrwWCC6B-zKJVzFpkey115W/exec'
+
+                        const form = document.forms['Contact-form']
+
+                        form.addEventListener('submit', e => {
+                        
+                        e.preventDefault()
+                        
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                        .then(response => alert("Thank you! Form is submitted" ))
+                        .then(() => { window.location.reload(); })
+                        .catch(error => console.error('Error!', error.message))
+                        })
+
+                </script>
             </div>
         </div>
     </section>
