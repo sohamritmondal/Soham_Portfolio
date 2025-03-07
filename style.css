@@ -77,7 +77,11 @@ section .title::after{
     transform: translateX(-50%);
 }
 
-/* navbar styling */
+
+
+
+
+/* __________________________________________________________navbar styling __________________________________________________________*/
 .navbar {
     position: fixed;
     top: 0;
@@ -135,7 +139,11 @@ section .title::after{
     color: #fff;
 }
 
-/* menu btn styling */
+
+
+
+
+/* __________________________________________________________menu btn styling __________________________________________________________*/
 .menu-btn{
     color: #fff;
     font-size: 23px;
@@ -171,7 +179,11 @@ section .title::after{
 }
 
 
-/* home section styling */
+
+
+
+
+/* __________________________________________________________home section styling__________________________________________________________ */
 .home{
     display: flex;
     background: url("h3.jpeg") no-repeat center;
@@ -239,7 +251,7 @@ section .title::after{
 
 
 
-/* about section styling */
+/*__________________________________________________________ about section styling__________________________________________________________ */
 .about .title::after{
     content: "who i am";
 }
@@ -295,7 +307,10 @@ section .title::after{
     background: none;
 }
 
-/* services section styling */
+
+
+
+/* __________________________________________________________services section styling __________________________________________________________*/
 .services, .teams{
     color:#fff;
     background: #111;
@@ -344,7 +359,12 @@ section .title::after{
 .text1{
     color: #fff;
 }
-/* skills section styling */
+
+
+
+
+
+/* __________________________________________________________skills section styling__________________________________________________________ */
 
 .skills .title::after{
     content: "what i know";
@@ -403,69 +423,100 @@ section .title::after{
     top: 0;
     background: crimson;
 }
-.skills-content .right .html::before{
-    width: 90%;
+.skills-content .right .dba::before{
+    width: 40%;
 }
-.skills-content .right .css::before{
-    width: 60%;
-}
-.skills-content .right .js::before{
-    width: 80%;
-}
-.skills-content .right .php::before{
-    width: 50%;
-}
-.skills-content .right .mysql::before{
+.skills-content .right .fst::before{
     width: 70%;
 }
+.skills-content .right .java::before{
+    width: 80%;
+}
+.skills-content .right .py::before{
+    width: 70%;
+}
+.skills-content .right .ps1::before{
+    width: 90%;
+}
 
-/* teams section styling */
-.teams .title::after{
-    content: "who with me";
-}
-.teams .carousel .card{
-    background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
+
+
+
+
+/*__________________________________________________________ PROJECT section styling__________________________________________________________ */
+.teams {
+    padding: 60px 0;
+    background: #000000;
     text-align: center;
+}
+
+.overview {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.teams .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.teams .subtitle {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.teams .carousel .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
-.teams .carousel .card:hover{
-    background: crimson;
+.teams .carousel .card:hover {
+    transform: translateY(-10px);
 }
-.teams .carousel .card .box{
+.teams .carousel .card .box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
 }
-.teams .carousel .card:hover .box{
-    transform: scale(1.05);
-}
-.teams .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-    color: crimson;
-}
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
+.teams .carousel .card img {
+    height: 50%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid crimson;
-    transition: all 0.3s ease;
 }
-.teams .carousel .card:hover img{
-    border-color: #fff;
+.teams .carousel .card .content {
+    padding: 20px;
+    text-align: center;
 }
-.owl-dots{
+.teams .carousel .card .text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+.teams .carousel .card .btn {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.teams .carousel .card .btn:hover {
+    background: darkred;
+}
+.owl-dots {
     text-align: center;
     margin-top: 20px;
 }
-.owl-dot{
+.owl-dot {
     height: 13px;
     width: 13px;
     margin: 0 5px;
@@ -474,16 +525,27 @@ section .title::after{
     border: 2px solid crimson!important;
     transition: all 0.3s ease;
 }
-.owl-dot.active{
+.owl-dot.active {
     width: 35px;
     border-radius: 14px;
 }
-.owl-dot.active,
-.owl-dot:hover{
+.owl-dot.active, .owl-dot:hover {
     background: crimson!important;
 }
 
-/* contact section styling */
+
+
+
+
+
+
+
+
+
+
+
+
+/* __________________________________________________________contact section styling__________________________________________________________ */
 .contact .title::after{
     content: "get in touch";
 }
@@ -578,7 +640,11 @@ section .title::after{
   color: crimson;
   background: none;
 }
-/* footer section styling */
+
+
+
+
+/* __________________________________________________________footer section styling __________________________________________________________*/
 footer{
     background: #111;
     padding: 15px 23px;
@@ -594,7 +660,7 @@ footer span a:hover{
 }
 
 
-/* responsive media query start */
+/* __________________________________________________________responsive media query start__________________________________________________________ */
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 600px;
