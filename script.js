@@ -42,7 +42,7 @@ $(document).ready(function(){
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Oracle DBA", "Developer", "Blogger", "Designer", "Freelancer"],
+        strings: ["Oracle DBA", "Developer", "Blogger", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
