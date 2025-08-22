@@ -35,14 +35,14 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Oracle DBA", "Developer", "Blogger", "Freelancer"],
+        strings: ["Associate Software Engineer", "Full-Stack Developer", "AI Enthusiast", "Database Administrator"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Oracle DBA", "Developer", "Blogger", "Freelancer"],
+        strings: ["Associate Software Engineer", "Full-Stack Developer", "AI Enthusiast", "Database Administrator"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -71,3 +71,4 @@ $(document).ready(function(){
         }
     });
 });
+
