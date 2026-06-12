@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Mondal — Software Engineer</title>
+    <meta name="description" content="Soham Mondal — Associate Software Engineer at Unisys. Full-stack development, Agentic AI, and database engineering.">
+    <link rel="icon" href="2572734.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom cursor + mouse glow -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-inner">
+            <span class="loader-logo">&lt;SM /&gt;</span>
+            <div class="loader-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Background grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- ============================ NAVBAR ============================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-mark">&lt;SM /&gt;</span>
+                <span class="logo-text">soham<span class="logo-accent">.dev</span></span>
+            </a>
+            <ul class="menu" id="menu">
+                <li><a href="#home" class="menu-link active">Home</a></li>
+                <li><a href="#about" class="menu-link">About</a></li>
+                <li><a href="#services" class="menu-link">Services</a></li>
+                <li><a href="#resume" class="menu-link">Resume</a></li>
+                <li><a href="#skills" class="menu-link">Skills</a></li>
+                <li><a href="#projects" class="menu-link">Projects</a></li>
+                <li><a href="#contact" class="menu-link nav-cta">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================ HERO ============================ -->
+    <header class="hero" id="home">
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge"><span class="pulse-dot"></span> Open to opportunities</div>
+                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Soham Mondal</span></h1>
+                <div class="hero-role"><span class="role-prompt">&gt;_</span> <span id="typed"></span><span class="caret"></span></div>
+                <p class="hero-sub">Associate Software Engineer at <b>Unisys</b> — engineering AI-driven systems,
+                   full-stack applications and high-performance databases.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                    <a href="Soham_CV.pdf" class="btn btn-ghost"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/soham-mondal-939511230" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/sohamritmondal" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com/sohamritmondal?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/SOHAMRIT" target="_blank" title="Telegram"><i class="fas fa-paper-plane"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-terminal" id="tiltTerminal">
+                <div class="terminal-head">
+                    <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+                    <span class="terminal-title">soham@unisys: ~/portfolio</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="t-prompt">$</span> whoami</p>
+                    <p class="t-out">soham.mondal <span class="t-dim">// Associate Software Engineer @ Unisys</span></p>
+                    <p><span class="t-prompt">$</span> cat stack.txt</p>
+                    <p class="t-out"><span class="t-key">Python</span> · <span class="t-key">Java</span> · <span class="t-key">JavaScript</span> · <span class="t-key">SQL Server</span> · <span class="t-key">Oracle</span> · <span class="t-key">PowerShell</span></p>
+                    <p><span class="t-prompt">$</span> grep -i "focus" career.log</p>
+                    <p class="t-out">Agentic AI · Full-Stack · Automation · DBA</p>
+                    <p><span class="t-prompt">$</span> ./status --check</p>
+                    <p class="t-out"><span class="t-ok">●</span> all systems operational <span class="t-dim">— ready to build</span></p>
+                    <p><span class="t-prompt">$</span> <span class="t-cursor"></span></p>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down"><span></span></a>
+    </header>
+
+    <!-- ============================ TECH MARQUEE ============================ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>PYTHON</span><i>◆</i><span>JAVA</span><i>◆</i><span>JAVASCRIPT</span><i>◆</i><span>AGENTIC AI</span><i>◆</i><span>SQL SERVER</span><i>◆</i><span>ORACLE</span><i>◆</i><span>POWERSHELL</span><i>◆</i><span>AZURE</span><i>◆</i><span>OCI</span><i>◆</i><span>GENAI / LLMs</span><i>◆</i><span>FULL-STACK</span><i>◆</i><span>AUTOMATION</span><i>◆</i>
+            <span>PYTHON</span><i>◆</i><span>JAVA</span><i>◆</i><span>JAVASCRIPT</span><i>◆</i><span>AGENTIC AI</span><i>◆</i><span>SQL SERVER</span><i>◆</i><span>ORACLE</span><i>◆</i><span>POWERSHELL</span><i>◆</i><span>AZURE</span><i>◆</i><span>OCI</span><i>◆</i><span>GENAI / LLMs</span><i>◆</i><span>FULL-STACK</span><i>◆</i><span>AUTOMATION</span><i>◆</i>
+        </div>
+    </div>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 01. about</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-photo reveal">
+                    <div class="photo-frame">
+                        <img src="smnew.jpg" alt="Soham Mondal">
+                    </div>
+                    <div class="photo-badge"><i class="fas fa-code"></i> ASE @ Unisys</div>
+                </div>
+                <div class="about-info reveal">
+                    <h3 class="about-heading">I'm Soham — a <span class="typing-2-wrap"><span id="typed2"></span><span class="caret"></span></span></h3>
+                    <p>As an <b>Associate Software Engineer</b> at <b>Unisys</b>, I am driven by a passion for solving
+                       complex technical challenges. My core strength lies in a robust understanding of both
+                       <b>Full-stack Development</b> and <b>Database Administration</b>. I apply my expertise in
+                       <b>SQL Server</b> and <b>Oracle</b> to ensure high-performance data systems, which directly
+                       powers my work developing applications with <b>Python</b>, <b>Java</b>, and <b>JavaScript</b>.</p>
+                    <p>I am also actively engaged with emerging technologies, including <b>Generative AI models like
+                       GPT, Vercel and Llama</b>, to innovate and build next-generation solutions. My strong academic
+                       background, marked by a <b>9.0 CGPA</b> and a published paper on <b>LLMs</b>, underscores my
+                       commitment to technical excellence.</p>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span class="stat-num" data-count="9.0" data-decimal="1">0</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-count="10" data-suffix="+">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-count="4">0</span>
+                            <span class="stat-label">Internships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num" data-count="1">0</span>
+                            <span class="stat-label">LLM Paper</span>
+                        </div>
+                    </div>
+                    <a href="Soham_CV.pdf" class="btn btn-primary"><i class="fas fa-file-arrow-down"></i> Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ SERVICES ============================ -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 02. services</span>
+                <h2 class="section-title">What I <span class="gradient-text">Do</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Fullstack Development</h3>
+                    <p>Building responsive, user-friendly web applications with <b>modern frameworks</b> and <b>design principles</b> for seamless user experiences.</p>
+                </div>
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Agentic AI Solutions</h3>
+                    <p>Developing autonomous, goal-oriented <b>AI systems</b> capable of reasoning, decision-making, and executing complex tasks in dynamic environments.</p>
+                </div>
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Exploring <b>cloud computing technologies</b> to optimize infrastructure, enhance security, and ensure scalability for enterprise systems.</p>
+                </div>
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Automation Scripting</h3>
+                    <p>Designing <b>automation workflows</b> with <b>Python, Java, and PowerShell</b> to streamline repetitive tasks, improve efficiency, and reduce errors.</p>
+                </div>
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Oracle DB</h3>
+                    <p>Skilled in database management, <b>automation using scripting</b>, performance tuning, and recovery to ensure seamless operations.</p>
+                </div>
+                <div class="service-card reveal tilt">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>MS SQL Server</h3>
+                    <p>Designing, managing, and optimizing robust databases with <b>Microsoft SQL Server</b> for data integrity and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ RESUME ============================ -->
+    <section class="resume section" id="resume">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 03. resume</span>
+                <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+            </div>
+            <div class="resume-grid">
+                <div class="resume-col reveal">
+                    <h3 class="resume-col-title"><i class="fas fa-briefcase"></i> Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="tl-date">Aug 2025 — Present</span>
+                            <h4>Associate Software Engineer</h4>
+                            <span class="tl-org">Unisys · Bangalore</span>
+                            <ul>
+                                <li>Developing software solutions using <b>Python</b>, focused on <b>AI-driven applications</b> and <b>automation</b>.</li>
+                                <li>Integrating <b>Agentic AI models</b> to create autonomous, goal-oriented systems.</li>
+                                <li>Designing and optimizing high-performance <b>SQL Server</b> and <b>Oracle</b> database systems.</li>
+                                <li>Delivering scalable, automation-enabled solutions with <b>Python</b> and <b>Java frameworks</b>.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-date">Oct 2024 — Jul 2025</span>
+                            <h4>CA&amp;I — Intern</h4>
+                            <span class="tl-org">Unisys · Bangalore</span>
+                            <ul>
+                                <li>Database administration: <b>backup</b>, <b>recovery</b>, and <b>performance monitoring</b>.</li>
+                                <li>Hands-on <b>PowerShell scripting</b> and <b>automation</b> for database management.</li>
+                                <li>Built automation with <b>AI</b>, <b>Python</b>, and <b>Java frameworks</b> for efficiency at scale.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-date">Oct 2023 — Nov 2024</span>
+                            <h4>Web Development Intern</h4>
+                            <span class="tl-org">Motion Cut · Remote</span>
+                            <ul>
+                                <li>Developed and maintained web apps using HTML, CSS, and JavaScript.</li>
+                                <li>Delivered four projects end-to-end, hitting every objective.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-date">Sep 2023 — Oct 2023</span>
+                            <h4>Data Analyst Intern</h4>
+                            <span class="tl-org">Lakshya Space · Bengaluru</span>
+                            <ul>
+                                <li>Engine pressure data analysis and prediction with Python.</li>
+                                <li>Used Matplotlib, NumPy, and Pandas on real rocket-engine projects.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-col reveal">
+                    <h3 class="resume-col-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="tl-date">2021 — 2025</span>
+                            <h4>B.E. Computer Science &amp; Engineering</h4>
+                            <span class="tl-org">New Horizon College of Engineering, Bangalore</span>
+                            <ul>
+                                <li>Graduated with a <b>CGPA of 9.00</b>.</li>
+                                <li>Core CS: DSA, OOPs, Java, Python, C, Machine Learning, DBMS, and Operating Systems.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-date">2019 — 2021</span>
+                            <h4>Higher Secondary Education (12th)</h4>
+                            <span class="tl-org">Katwa Bharati Bhaban High School, West Bengal</span>
+                            <ul>
+                                <li>Scored <b>85%</b> — Physics, Chemistry, Mathematics, Biology, Bengali, English.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-date">2018 — 2019</span>
+                            <h4>Secondary Education (10th)</h4>
+                            <span class="tl-org">Chanduli High School, West Bengal</span>
+                            <ul>
+                                <li>Completed with <b>73.14%</b>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resume-contact-card">
+                        <h4><i class="fas fa-id-card"></i> Quick Info</h4>
+                        <p><i class="fas fa-location-dot"></i> Bengaluru, Karnataka, India</p>
+                        <p><i class="fas fa-phone"></i> +91 7679565815 / 7583946162</p>
+                        <p><i class="fas fa-envelope"></i> sohamritmondal@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 04. skills</span>
+                <h2 class="section-title">Tech <span class="gradient-text">Arsenal</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-intro reveal">
+                    <h3>My creative skills &amp; experiences.</h3>
+                    <p>I build robust software and manage high-performance databases. My expertise spans
+                       <b>Full-Stack Development</b>, <b>AI-driven automation</b>, <b>Python</b>, <b>Java</b>,
+                       <b>PowerShell scripting</b>, and database administration with <b>SQL Server</b> and
+                       <b>Oracle</b>. I enjoy collaborating with cross-functional teams to ship scalable,
+                       efficient, and innovative solutions.</p>
+                    <div class="tech-chips">
+                        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript</span>
+                        <span class="chip">PowerShell</span><span class="chip">SQL Server</span><span class="chip">Oracle</span>
+                        <span class="chip">Azure</span><span class="chip">OCI</span><span class="chip">Agentic AI</span>
+                        <span class="chip">GenAI / LLMs</span><span class="chip">HTML / CSS</span><span class="chip">Git</span>
+                    </div>
+                </div>
+                <div class="skills-bars reveal">
+                    <div class="bar"><div class="bar-info"><span>PowerShell Automation</span><span class="bar-pct">90%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 90%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Agentic AI Ops</span><span class="bar-pct">80%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 80%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Java</span><span class="bar-pct">80%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 80%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Python</span><span class="bar-pct">70%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 70%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Full-Stack Development</span><span class="bar-pct">70%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 70%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>SQL Server DB Management</span><span class="bar-pct">60%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 60%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Oracle Database Management</span><span class="bar-pct">60%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 60%"></div></div></div>
+                    <div class="bar"><div class="bar-info"><span>Azure &amp; OCI Management</span><span class="bar-pct">60%</span></div><div class="bar-track"><div class="bar-fill" style="--w: 60%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ PROJECTS ============================ -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 05. projects</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Builds</span></h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card reveal tilt">
+                    <div class="project-img">
+                        <img src="project_car.jpg" alt="Car Racing Game" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sohamritmondal/Car_Racing_Game_JAVA_MySQL" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags"><span>Java</span><span>MySQL</span><span>Game Dev</span></div>
+                        <h3>Car Racing Game</h3>
+                        <p>Smooth 2D racing experience with a login system and secure MySQL storage. Dynamic leaderboard tracks top scores for competitive replayability.</p>
+                    </div>
+                </article>
+                <article class="project-card reveal tilt">
+                    <div class="project-img">
+                        <img src="project_sign.jpg" alt="SignLink" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sohamritmondal/Web_Base_Sign_Language_Translation" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags"><span>ML</span><span>Web</span><span>Accessibility</span></div>
+                        <h3>SignLink — Sign Language Translation</h3>
+                        <p>Web-based application bridging the communication gap between hearing and non-hearing communities through real-time sign translation.</p>
+                    </div>
+                </article>
+                <article class="project-card reveal tilt">
+                    <div class="project-img">
+                        <img src="project_coffee .jpg" alt="Morning Mingle Coffee Website" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sohamritmondal/Coffee_Shop_Website" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>Dashboard</span></div>
+                        <h3>Morning Mingle Coffee Website</h3>
+                        <p>Coffee shop prototype with a seamless ordering flow and a dynamic dashboard that tracks order history for convenience and engagement.</p>
+                    </div>
+                </article>
+                <article class="project-card reveal tilt">
+                    <div class="project-img">
+                        <img src="project_portfolio.jpg" alt="Portfolio Template" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://github.com/sohamritmondal/Soham_Portfolio" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>Responsive</span></div>
+                        <h3>Portfolio Template</h3>
+                        <p>Interactive, responsive showcase of skills, experience, and projects with sleek tab-based navigation.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="projects-more reveal">
+                <a href="https://github.com/sohamritmondal" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> More on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-label">// 06. contact</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Let's build something great.</h3>
+                    <p>Feel free to reach out for opportunities, collaborations, or queries. Whether it's about
+                       database management, web development, or automation — I'm always open to discussions.</p>
+                    <div class="contact-rows">
+                        <div class="contact-row">
+                            <div class="contact-row-icon"><i class="fas fa-user"></i></div>
+                            <div><span class="c-head">Name</span><span class="c-sub">Soham Mondal</span></div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-row-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><span class="c-head">Address</span><span class="c-sub">Bengaluru, Karnataka, India</span></div>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-row-icon"><i class="fas fa-envelope"></i></div>
+                            <div><span class="c-head">Email</span><span class="c-sub">sohamritmondal@gmail.com</span></div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/soham-mondal-939511230" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sohamritmondal" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/sohamritmondal?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/SOHAMRIT" target="_blank" title="Telegram"><i class="fas fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal">
+                    <!-- ============ CONTACT FORM — BACKEND WIRED, DO NOT TOUCH ============ -->
+                    <form method="post" action="https://script.google.com/macros/s/AKfycby_S7A8v_Rgg7a6eGySgg3ID62lUMo35Wk7RiW4oGxSNYrwWCC6B-zKJVzFpkey115W/exec" name="Contact-form">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" name="NAME" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" name="EMAIL" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="SUBJECT" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" name="MESSAGE" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit" id="sendBtn">Send message <i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                    <div class="form-success" id="formSuccess" aria-live="polite">
+                        <svg class="check-svg" viewBox="0 0 52 52">
+                            <circle class="check-circle" cx="26" cy="26" r="24" fill="none"/>
+                            <path class="check-mark" fill="none" d="M14 27l8 8 16-16"/>
+                        </svg>
+                        <h4>Message sent!</h4>
+                        <p>Thanks for reaching out — I'll get back to you soon.</p>
+                    </div>
+                    <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycby_S7A8v_Rgg7a6eGySgg3ID62lUMo35Wk7RiW4oGxSNYrwWCC6B-zKJVzFpkey115W/exec'
+
+                        const form = document.forms['Contact-form']
+                        const sendBtn = document.getElementById('sendBtn')
+                        const formWrap = document.querySelector('.contact-form-wrap')
+                        const sendBtnHTML = sendBtn.innerHTML
+
+                        form.addEventListener('submit', e => {
+                            e.preventDefault()
+
+                            // instant feedback while the request is in flight
+                            sendBtn.disabled = true
+                            sendBtn.classList.add('sending')
+                            sendBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...'
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                            .then(response => {
+                                form.reset()
+                                formWrap.classList.add('sent')
+                                setTimeout(() => {
+                                    formWrap.classList.remove('sent')
+                                    sendBtn.disabled = false
+                                    sendBtn.classList.remove('sending')
+                                    sendBtn.innerHTML = sendBtnHTML
+                                }, 3200)
+                            })
+                            .catch(error => {
+                                console.error('Error!', error.message)
+                                sendBtn.disabled = false
+                                sendBtn.classList.remove('sending')
+                                sendBtn.innerHTML = '<i class="fas fa-triangle-exclamation"></i> Failed — try again'
+                                setTimeout(() => { sendBtn.innerHTML = sendBtnHTML }, 2800)
+                            })
+                        })
+                    </script>
+                    <!-- ============ END CONTACT FORM — DO NOT TOUCH ============ -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#home" class="logo"><span class="logo-mark">&lt;SM /&gt;</span></a>
+            <p>Crafted with <i class="fas fa-heart heart"></i> by <a href="https://github.com/sohamritmondal" target="_blank">Soham Mondal</a>
+               · <i class="far fa-copyright"></i> <span id="year">2025</span> All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/soham-mondal-939511230" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/sohamritmondal" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/sohamritmondal?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/SOHAMRIT" target="_blank" title="Telegram"><i class="fas fa-paper-plane"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-up-btn" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-angle-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
