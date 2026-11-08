@@ -1,0 +1,91 @@
+/* ============================================================
+   sections/about.css
+   About: photo frame with depth, badge, stat tiles.
+   ============================================================ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+.about-photo { position: relative; perspective: 1200px; }
+.photo-frame {
+    position: relative;
+    border-radius: 18px;
+    padding: 4px;
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    box-shadow: var(--shadow-2);
+    transform: rotateY(6deg) rotateX(2deg);
+    transition: transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) ease;
+}
+.photo-frame img {
+    border-radius: 14px;
+    width: 100%;
+    height: auto;
+    filter: saturate(0.92) contrast(1.02);
+}
+.photo-badge {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    padding: 10px 18px;
+    border-radius: 100px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+.photo-badge i { color: var(--accent); margin-right: 6px; }
+
+@media (hover: hover) and (pointer: fine) {
+    .about-photo:hover .photo-frame { transform: rotateY(0deg) rotateX(0deg) translateY(-4px); }
+}
+
+.about-heading {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-bottom: 18px;
+}
+.typing-2-wrap { color: var(--accent); font-family: var(--font-mono); font-size: 1.15rem; font-weight: 500; }
+.about-info p { color: var(--muted); margin-bottom: 16px; }
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 30px 0 32px;
+}
+.stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    border-radius: 12px;
+    padding: 18px 10px;
+    text-align: center;
+    box-shadow: var(--shadow-1);
+    transition: transform var(--dur) var(--ease-out), border-color var(--dur) ease;
+}
+.stat-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text);
+}
+.stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+
+@media (hover: hover) and (pointer: fine) {
+    .stat:hover { transform: translateY(-4px); border-color: var(--accent-line); }
+}

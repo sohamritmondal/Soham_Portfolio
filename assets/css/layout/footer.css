@@ -1,0 +1,24 @@
+/* ============================================================
+   layout/footer.css
+   ============================================================ */
+
+.footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0;
+    background: var(--surface-tint);
+}
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.footer p { color: var(--muted); font-size: 0.88rem; }
+.footer p a { color: var(--text); font-weight: 600; border-bottom: 1px solid transparent; transition: border-color var(--dur) ease; }
+.footer .social-links a { width: 36px; height: 36px; font-size: 0.9rem; }
+.heart { color: var(--accent); display: inline-block; }
+
+@media (hover: hover) and (pointer: fine) {
+    .footer p a:hover { border-bottom-color: var(--accent); }
+}

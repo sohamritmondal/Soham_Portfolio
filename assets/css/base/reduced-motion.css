@@ -1,0 +1,46 @@
+/* ============================================================
+   base/reduced-motion.css
+   prefers-reduced-motion: keep opacity and colour changes, remove
+   movement, parallax and loops. Must load last.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    /* entrances: fade only, no delay chain */
+    html.js .reveal { transform: none; }
+    .reveal, .reveal .timeline-item { transition: opacity 250ms ease !important; transition-delay: 0ms !important; transform: none !important; }
+    body.is-ready .hero-text > *,
+    body.is-ready .scene-back,
+    body.is-ready .hero-terminal,
+    body.is-ready .scene-tile,
+    body.is-ready .scroll-indicator { animation: fadeIn 250ms ease both !important; animation-delay: 0ms !important; }
+    .scene-back { transform: rotateY(-12deg) rotateX(5deg) translateZ(-70px); }
+    .hero-terminal { transform: rotateY(-12deg) rotateX(5deg); }
+    .scene-tile { transform: rotateY(-10deg) rotateX(6deg) translateZ(60px); }
+    .tile-bar span { transition: none !important; transform: scaleX(0.72) !important; }
+
+    /* loops and continuous motion */
+    .pulse-dot::after, .scroll-indicator span, .caret, .t-cursor, .loader-bar span,
+    .marquee-track, .button-area button.sending, .bg-aurora span,
+    .btn-glow::before, .btn-glow::after, .btn-glow i { animation: none !important; }
+    .marquee-track { transform: none; }
+    .btn-glow::before { opacity: 0.6; }
+    .btn-glow::after { display: none; }
+
+    /* journey: no 3D stepping, keep the highlight */
+    .timeline.is-live .timeline-item { transform: none !important; opacity: 1 !important; }
+    .timeline::after { transition: none; }
+    .timeline.is-live .timeline-item.is-current::before { animation: none !important; }
+    .resume-panel.is-active { animation: fadeIn 200ms ease both !important; }
+    .resume-tab-indicator { transition: none !important; }
+    .reveal .timeline-item { transform: none !important; }
+
+    /* hover and press motion */
+    .btn, .btn:hover, .btn:active,
+    .menu-link.nav-cta:hover, .chip:hover, .stat:hover, .contact-row:hover,
+    .social-links a:hover, .logo:hover .logo-mark, .service-card:hover .service-icon,
+    .about-photo:hover .photo-frame, .project-card:hover .project-img img, .overlay-btn { transform: none !important; }
+    .bar-fill { transition-duration: 1ms !important; transition-delay: 0ms !important; }
+    .section-label::before { transition: none; transform: scaleX(1); }
+}

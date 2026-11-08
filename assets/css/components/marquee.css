@@ -1,0 +1,48 @@
+/* ============================================================
+   components/marquee.css
+   Tech strip. Constant motion, so linear easing; pauses on hover.
+   ============================================================ */
+
+.marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-tint);
+    padding: 15px 0;
+    position: relative;
+    z-index: 2;
+}
+.marquee::before, .marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.marquee::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    width: max-content;
+    animation: marqueeScroll 36s linear infinite;
+}
+.marquee-track span {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--dim);
+    white-space: nowrap;
+    transition: color var(--dur) ease;
+}
+.marquee-track i { color: var(--line-strong); font-style: normal; font-size: 0.5rem; }
+@keyframes marqueeScroll { to { transform: translateX(-50%); } }
+
+@media (hover: hover) and (pointer: fine) {
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-track span:hover { color: var(--accent); }
+}

@@ -1,0 +1,76 @@
+/* ============================================================
+   sections/skills.css
+   Skills: tech chips and progress bars. Bars animate transform:
+   scaleX (not width) when skill-bars.js adds .animated.
+   ============================================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+}
+.skills-intro h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-bottom: 16px;
+}
+.skills-intro p { color: var(--muted); margin-bottom: 26px; }
+
+.tech-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 7px 13px;
+    border-radius: 7px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--text-2);
+    cursor: default;
+    transition: color var(--dur) ease, border-color var(--dur) ease, transform var(--dur-fast) var(--ease-out), background var(--dur) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .chip:hover {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        transform: translateY(-2px);
+        background: var(--accent-soft);
+    }
+}
+
+.bar { margin-bottom: 22px; }
+.bar-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.93rem;
+}
+.bar-pct { font-family: var(--font-mono); color: var(--accent); font-size: 0.82rem; }
+.bar-track {
+    height: 8px;
+    background: var(--track);
+    border-radius: 100px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px var(--track-inset);
+}
+.bar-fill {
+    height: 100%;
+    width: var(--w);
+    border-radius: 100px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.1s var(--ease-out);
+}
+.skills-bars.animated .bar-fill { transform: scaleX(1); }
+.skills-bars .bar:nth-child(2) .bar-fill { transition-delay: 60ms; }
+.skills-bars .bar:nth-child(3) .bar-fill { transition-delay: 120ms; }
+.skills-bars .bar:nth-child(4) .bar-fill { transition-delay: 180ms; }
+.skills-bars .bar:nth-child(5) .bar-fill { transition-delay: 240ms; }
+.skills-bars .bar:nth-child(6) .bar-fill { transition-delay: 300ms; }
+.skills-bars .bar:nth-child(7) .bar-fill { transition-delay: 360ms; }
+.skills-bars .bar:nth-child(8) .bar-fill { transition-delay: 420ms; }

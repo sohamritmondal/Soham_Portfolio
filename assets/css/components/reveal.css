@@ -1,0 +1,41 @@
+/* ============================================================
+   components/reveal.css
+   Scroll reveal (features/reveal.js adds .visible). Grid children
+   stagger 60ms apart; the group settles within ~300ms of the first.
+   Hidden state only applies when JS is running (html.js).
+   ============================================================ */
+
+html.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+}
+.reveal {
+    transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+/* must outrank the html.js hidden rule above */
+html.js .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* stagger inside grids: each sibling waits a beat longer */
+.services-grid > .reveal:nth-child(2),
+.projects-grid > .reveal:nth-child(2),
+.stats-row > .reveal:nth-child(2) { transition-delay: 60ms; }
+.services-grid > .reveal:nth-child(3),
+.projects-grid > .reveal:nth-child(3) { transition-delay: 120ms; }
+.services-grid > .reveal:nth-child(4),
+.projects-grid > .reveal:nth-child(4) { transition-delay: 180ms; }
+.services-grid > .reveal:nth-child(5) { transition-delay: 240ms; }
+.services-grid > .reveal:nth-child(6) { transition-delay: 300ms; }
+
+/* second column of two-column layouts follows the first */
+.about-grid > .reveal:nth-child(2),
+.skills-grid > .reveal:nth-child(2),
+.resume-panels,
+.contact-grid > .reveal:nth-child(2) { transition-delay: 100ms; }
+
+/* timeline items cascade inside a revealed column */
+.reveal .timeline-item { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+.reveal.visible .timeline-item { opacity: 1; transform: translateY(0); }
+.reveal.visible .timeline-item:nth-child(1) { transition-delay: 120ms; }
+.reveal.visible .timeline-item:nth-child(2) { transition-delay: 200ms; }
+.reveal.visible .timeline-item:nth-child(3) { transition-delay: 280ms; }
+.reveal.visible .timeline-item:nth-child(4) { transition-delay: 360ms; }

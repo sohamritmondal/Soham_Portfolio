@@ -1,0 +1,28 @@
+/* ============================================================
+   components/social-links.css
+   Social icon tiles. magnetic.js adds a small pull on hover.
+   ============================================================ */
+
+.social-links { display: flex; gap: 10px; }
+.social-links a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 1rem;
+    transition: transform var(--dur-fast) var(--ease-out), color var(--dur) ease, border-color var(--dur) ease, box-shadow var(--dur) ease;
+}
+.social-links a:active { transform: scale(0.95); }
+
+@media (hover: hover) and (pointer: fine) {
+    .social-links a:hover {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+}

@@ -1,0 +1,130 @@
+/* ============================================================
+   base/variables.css
+   Design tokens for both themes. LIGHT is the default (:root);
+   html[data-theme="dark"] overrides. core/theme-init.js sets the
+   attribute before first paint; features/theme.js toggles it.
+   ============================================================ */
+
+:root {
+    color-scheme: light;
+
+    /* ground + surfaces */
+    --bg: #F5F8FC;
+    --bg-2: #EDF2F8;
+    --surface: #FFFFFF;
+    --raised: #FFFFFF;
+    --surface-tint: rgba(255, 255, 255, 0.65);
+    --surface-solid: rgba(255, 255, 255, 0.97);
+    --nav-bg: rgba(245, 248, 252, 0.78);
+    --menu-bg: rgba(245, 248, 252, 0.97);
+    --overlay: rgba(11, 18, 32, 0.55);
+    --img-bg: #E6ECF3;
+    --back-plate: #DCE5EF;
+    --track: rgba(15, 23, 42, 0.1);
+    --track-inset: rgba(15, 23, 42, 0.08);
+
+    /* lines */
+    --line: rgba(15, 23, 42, 0.1);
+    --line-strong: rgba(15, 23, 42, 0.18);
+    --highlight: rgba(255, 255, 255, 0.95);
+
+    /* text */
+    --text: #0B1220;
+    --text-2: #243044;
+    --muted: #526079;
+    --dim: #7B879C;
+
+    /* accent: teal */
+    --accent: #0F766E;
+    --accent-strong: #0F766E;
+    --accent-soft: rgba(15, 118, 110, 0.1);
+    --accent-line: rgba(15, 118, 110, 0.35);
+    --accent-glow: rgba(15, 118, 110, 0.35);
+    --on-accent: #FFFFFF;
+    --success: #15803D;
+
+    /* aurora fields (background only) */
+    --aurora-1: rgba(45, 212, 191, 0.28);
+    --aurora-2: rgba(96, 165, 250, 0.26);
+    --aurora-3: rgba(125, 211, 252, 0.22);
+    --grid-dot: rgba(15, 23, 42, 0.12);
+
+    /* terminal (always dark) */
+    --term-bg: #0B1120;
+    --term-head: rgba(255, 255, 255, 0.03);
+    --term-border: rgba(148, 163, 184, 0.26);
+    --term-text: #E7ECF5;
+    --term-muted: #9AA7BD;
+    --term-dim: #67748C;
+    --term-dot: #273247;
+
+    /* type */
+    --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* shape */
+    --radius: 14px;
+    --radius-sm: 9px;
+    --nav-h: 72px;
+
+    /* depth */
+    --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 30px rgba(15, 23, 42, 0.07);
+    --shadow-2: 0 1px 2px rgba(15, 23, 42, 0.05), 0 24px 60px rgba(15, 23, 42, 0.12);
+    --shadow-3: 0 40px 90px rgba(15, 23, 42, 0.22);
+    --shadow-accent: 0 8px 22px rgba(15, 118, 110, 0.28);
+    --shadow-accent-hover: 0 14px 32px rgba(15, 118, 110, 0.36);
+
+    /* motion */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --dur-fast: 160ms;
+    --dur: 240ms;
+    --dur-slow: 650ms;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #070B14;
+    --bg-2: #0B1120;
+    --surface: #0F1626;
+    --raised: #161F33;
+    --surface-tint: rgba(15, 22, 38, 0.6);
+    --surface-solid: rgba(15, 22, 38, 0.97);
+    --nav-bg: rgba(7, 11, 20, 0.72);
+    --menu-bg: rgba(7, 11, 20, 0.96);
+    --overlay: rgba(7, 11, 20, 0.62);
+    --img-bg: #0B1120;
+    --back-plate: #0C1322;
+    --track: rgba(148, 163, 184, 0.14);
+    --track-inset: rgba(0, 0, 0, 0.5);
+
+    --line: rgba(148, 163, 184, 0.14);
+    --line-strong: rgba(148, 163, 184, 0.26);
+    --highlight: rgba(255, 255, 255, 0.14);
+
+    --text: #E7ECF5;
+    --text-2: #C3CCDB;
+    --muted: #9AA7BD;
+    --dim: #67748C;
+
+    --accent: #2DD4BF;
+    --accent-strong: #14B8A6;
+    --accent-soft: rgba(45, 212, 191, 0.12);
+    --accent-line: rgba(45, 212, 191, 0.38);
+    --accent-glow: rgba(45, 212, 191, 0.45);
+    --on-accent: #042F2B;
+    --success: #34D399;
+
+    --aurora-1: rgba(20, 184, 166, 0.22);
+    --aurora-2: rgba(37, 99, 235, 0.20);
+    --aurora-3: rgba(56, 189, 248, 0.14);
+    --grid-dot: rgba(148, 163, 184, 0.16);
+
+    --shadow-1: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-2: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 60px rgba(0, 0, 0, 0.55);
+    --shadow-3: 0 40px 90px rgba(0, 0, 0, 0.6);
+    --shadow-accent: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 8px 22px rgba(20, 184, 166, 0.35);
+    --shadow-accent-hover: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 32px rgba(20, 184, 166, 0.45);
+}

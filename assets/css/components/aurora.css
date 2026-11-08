@@ -1,0 +1,51 @@
+/* ============================================================
+   components/aurora.css
+   Three soft colour fields drifting slowly behind the page.
+   Radial gradients, transform-only animation, no blur filter, so it
+   stays on the compositor. Colours come from --aurora-* tokens.
+   ============================================================ */
+
+.bg-aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+    pointer-events: none;
+    background: var(--bg);
+    transition: background var(--dur) ease;
+}
+.bg-aurora span {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+}
+.bg-aurora span:nth-child(1) {
+    width: 70vw; height: 70vw; min-width: 620px; min-height: 620px;
+    top: -30vw; left: -18vw;
+    background: radial-gradient(circle at 50% 50%, var(--aurora-1) 0%, rgba(0, 0, 0, 0) 60%);
+    animation: auroraA 34s var(--ease-in-out) infinite alternate;
+}
+.bg-aurora span:nth-child(2) {
+    width: 64vw; height: 64vw; min-width: 560px; min-height: 560px;
+    top: -14vw; right: -22vw;
+    background: radial-gradient(circle at 50% 50%, var(--aurora-2) 0%, rgba(0, 0, 0, 0) 60%);
+    animation: auroraB 42s var(--ease-in-out) infinite alternate;
+}
+.bg-aurora span:nth-child(3) {
+    width: 56vw; height: 56vw; min-width: 480px; min-height: 480px;
+    bottom: -26vw; left: 22vw;
+    background: radial-gradient(circle at 50% 50%, var(--aurora-3) 0%, rgba(0, 0, 0, 0) 60%);
+    animation: auroraC 38s var(--ease-in-out) infinite alternate;
+}
+@keyframes auroraA {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(12vw, 8vw, 0) scale(1.12); }
+}
+@keyframes auroraB {
+    from { transform: translate3d(0, 0, 0) scale(1.05); }
+    to { transform: translate3d(-10vw, 10vw, 0) scale(0.95); }
+}
+@keyframes auroraC {
+    from { transform: translate3d(0, 0, 0) scale(0.95); }
+    to { transform: translate3d(-8vw, -10vw, 0) scale(1.1); }
+}

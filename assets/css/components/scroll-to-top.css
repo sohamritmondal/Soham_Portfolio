@@ -1,0 +1,33 @@
+/* ============================================================
+   components/scroll-to-top.css
+   Floating back-to-top button (scroll-to-top.js toggles .show).
+   ============================================================ */
+
+.scroll-up-btn {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    border-radius: 12px;
+    background: var(--raised);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.96);
+    box-shadow: var(--shadow-2);
+    transition: opacity var(--dur) ease, transform var(--dur) var(--ease-out), visibility var(--dur), border-color var(--dur) ease, color var(--dur) ease;
+}
+.scroll-up-btn.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.scroll-up-btn:active { transform: scale(0.95); }
+
+@media (hover: hover) and (pointer: fine) {
+    .scroll-up-btn.show:hover { border-color: var(--accent-line); color: var(--accent); }
+}

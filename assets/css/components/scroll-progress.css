@@ -1,0 +1,17 @@
+/* ============================================================
+   components/scroll-progress.css
+   Top read-progress bar. scroll-progress.js drives transform: scaleX().
+   ============================================================ */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1001;
+    pointer-events: none;
+}

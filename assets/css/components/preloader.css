@@ -1,0 +1,52 @@
+/* ============================================================
+   components/preloader.css
+   Loading screen. preloader.js adds .hidden, then body.is-ready,
+   which starts the hero entrance (see sections/hero.css).
+   ============================================================ */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 450ms var(--ease-out), visibility 450ms;
+}
+#preloader.hidden { opacity: 0; visibility: hidden; }
+
+.loader-inner { text-align: center; }
+.loader-logo {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    box-shadow: var(--shadow-1);
+}
+.loader-bar {
+    width: 160px;
+    height: 2px;
+    margin: 22px auto 0;
+    background: var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.loader-bar span {
+    display: block;
+    height: 100%;
+    width: 40%;
+    background: var(--accent);
+    border-radius: 4px;
+    animation: loaderSlide 1s var(--ease-in-out) infinite;
+}
+@keyframes loaderSlide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+}

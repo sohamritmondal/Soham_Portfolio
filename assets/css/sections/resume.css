@@ -1,0 +1,232 @@
+/* ============================================================
+   sections/resume.css
+   Journey: Experience / Education tabs and a centred, alternating
+   timeline. Cards take turns left / right of a central spine
+   (odd = left, even = right, so new items alternate on their own);
+   the date sits on the opposite side of the spine; a connector joins
+   card and spine. features/journey.js fills the spine (--p) as the
+   visitor scrolls and marks the step nearest the viewport centre
+   .is-current. Mobile falls back to a single left-hand column
+   (base/responsive.css).
+   ============================================================ */
+
+/* ---- tabs: Experience | Education ---- */
+.resume-tabs {
+    position: relative;
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 40px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow-1);
+}
+.resume-tab {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: 600 0.92rem var(--font-display);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: color var(--dur) ease, transform var(--dur-fast) var(--ease-out);
+}
+.resume-tab i { color: var(--dim); font-size: 0.85rem; transition: color var(--dur) ease; }
+.resume-tab.is-active { color: var(--text); }
+.resume-tab.is-active i { color: var(--accent); }
+.resume-tab:active { transform: scale(0.97); }
+.resume-tab-indicator {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: calc(100% - 8px);
+    width: 0;
+    border-radius: 9px;
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    box-shadow: var(--shadow-1);
+    transition: transform 280ms var(--ease-out), width 280ms var(--ease-out);
+    z-index: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+    .resume-tab:hover { color: var(--text); }
+}
+
+.resume-panel[hidden] { display: none; }
+.resume-panel.is-active { animation: panelIn 260ms var(--ease-out) both; }
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- the spine ---- */
+.timeline {
+    --p: 0;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 0;
+    perspective: 1400px;
+}
+.timeline::before,
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    margin-left: -1px;
+    border-radius: 2px;
+}
+.timeline::before { background: var(--track); }
+.timeline::after {
+    background: var(--accent);
+    transform: scaleY(var(--p));
+    transform-origin: top;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ---- cards, alternating ---- */
+.timeline-item {
+    position: relative;
+    width: calc(50% - 48px);
+    padding: 20px 22px;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    background: var(--surface);
+    box-shadow: var(--shadow-1);
+    transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out), border-color var(--dur) ease, box-shadow var(--dur) ease;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item:nth-child(odd)  { margin-right: auto; transform-origin: right center; }  /* left of spine */
+.timeline-item:nth-child(even) { margin-left: auto;  transform-origin: left center; }   /* right of spine */
+
+/* dot on the spine */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--line-strong);
+    z-index: 2;
+    transition: border-color var(--dur) ease, background var(--dur) ease, box-shadow var(--dur) ease, transform var(--dur) var(--ease-out);
+}
+.timeline-item:nth-child(odd)::before  { right: -54px; }
+.timeline-item:nth-child(even)::before { left: -54px; }
+
+/* connector from card to spine */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 31px;
+    width: 42px;
+    height: 2px;
+    background: var(--track);
+    transition: background var(--dur) ease;
+}
+.timeline-item:nth-child(odd)::after  { right: -48px; }
+.timeline-item:nth-child(even)::after { left: -48px; }
+
+/* date on the opposite side of the spine */
+.tl-date {
+    position: absolute;
+    top: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.timeline-item:nth-child(odd) .tl-date  { left: calc(100% + 78px); }
+.timeline-item:nth-child(even) .tl-date { right: calc(100% + 78px); text-align: right; }
+
+/* "Now" badge on the present role */
+.timeline-item.is-now h4::after {
+    content: 'Now';
+    display: inline-block;
+    margin-left: 10px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font: 600 0.6rem var(--font-mono);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--on-accent);
+    background: var(--accent-strong);
+    vertical-align: middle;
+}
+
+/* ---- scroll reveal: each card swings in from its own side ---- */
+.reveal .timeline-item:nth-child(odd)  { opacity: 0; transform: translateX(-18px) rotateY(8deg); }
+.reveal .timeline-item:nth-child(even) { opacity: 0; transform: translateX(18px) rotateY(-8deg); }
+.reveal.visible .timeline-item { opacity: 1; transform: translateX(0) rotateY(0); }
+
+/* ---- presentation states (journey.js), outrank the reveal rules ---- */
+.reveal.visible .timeline.is-live .timeline-item:nth-child(odd)  { opacity: 0.55; transform: translateZ(-30px) rotateY(5deg); }
+.reveal.visible .timeline.is-live .timeline-item:nth-child(even) { opacity: 0.55; transform: translateZ(-30px) rotateY(-5deg); }
+.reveal.visible .timeline.is-live .timeline-item.is-current {
+    opacity: 1;
+    transform: translateZ(0) rotateY(0);
+    border-color: var(--accent-line);
+    box-shadow: var(--shadow-2);
+}
+.timeline.is-live .timeline-item.is-current::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 5px var(--accent-soft), 0 0 18px var(--accent-glow);
+    transform: scale(1.15);
+    animation: dotPulse 600ms var(--ease-out);
+}
+.timeline.is-live .timeline-item.is-current::after { background: var(--accent); }
+.timeline.is-live .timeline-item.is-done::before { background: var(--accent); border-color: var(--accent); }
+.timeline.is-live .timeline-item.is-done::after { background: var(--accent-line); }
+@keyframes dotPulse {
+    0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+    100% { box-shadow: 0 0 0 14px rgba(0, 0, 0, 0); }
+}
+
+/* ---- card content ---- */
+.timeline-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
+}
+.tl-org {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+.timeline-item ul { padding-left: 18px; list-style: none; }
+.timeline-item li {
+    color: var(--muted);
+    font-size: 0.92rem;
+    position: relative;
+    padding-left: 4px;
+    margin-bottom: 6px;
+}
+.timeline-item li::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 0.72em;
+    width: 6px;
+    height: 1px;
+    background: var(--accent);
+}

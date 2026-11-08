@@ -1,0 +1,96 @@
+/* ============================================================
+   components/buttons.css
+   .btn, .btn-primary, .btn-ghost, and .btn-glow: a halo that
+   breathes plus a sheen that sweeps every few seconds, used on the
+   two Download CV buttons to draw the eye. Pseudo-elements animate
+   opacity and transform only.
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: var(--font-display);
+    letter-spacing: -0.1px;
+    position: relative;
+    isolation: isolate;
+    transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) ease, border-color var(--dur) ease, color var(--dur) ease, background var(--dur) ease;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+    background: var(--accent-strong);
+    color: var(--on-accent);
+    box-shadow: var(--shadow-accent);
+}
+.btn-ghost {
+    background: var(--surface-tint);
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* glow treatment */
+.btn-glow { overflow: hidden; }
+.btn-glow.btn-ghost { border-color: var(--accent-line); color: var(--text); }
+.btn-glow::before {
+    /* breathing halo */
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px var(--accent-line), 0 0 28px 6px var(--accent-glow);
+    opacity: 0;
+    z-index: -1;
+    animation: haloBreath 3.2s var(--ease-in-out) infinite;
+    pointer-events: none;
+}
+.btn-glow::after {
+    /* sheen sweep */
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 0;
+    width: 45%;
+    height: 180%;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.32) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-220%) skewX(-18deg);
+    animation: sheenSweep 4.2s var(--ease-in-out) 1.2s infinite;
+    pointer-events: none;
+}
+.btn-glow.btn-ghost::after { background: linear-gradient(100deg, rgba(45, 212, 191, 0) 0%, rgba(45, 212, 191, 0.28) 50%, rgba(45, 212, 191, 0) 100%); }
+
+/* the download icon keeps "downloading": arrow drops, fades, re-enters from the top */
+.btn-glow i {
+    display: inline-block;
+    animation: dlDrop 1.6s var(--ease-in-out) infinite;
+}
+@keyframes dlDrop {
+    0%   { transform: translateY(-5px); opacity: 0; }
+    25%  { transform: translateY(-1px); opacity: 1; }
+    70%  { transform: translateY(2px);  opacity: 1; }
+    100% { transform: translateY(6px);  opacity: 0; }
+}
+
+@keyframes haloBreath {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+}
+@keyframes sheenSweep {
+    0% { transform: translateX(-220%) skewX(-18deg); }
+    28% { transform: translateX(340%) skewX(-18deg); }
+    100% { transform: translateX(340%) skewX(-18deg); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-accent-hover); }
+    .btn-primary:active { transform: translateY(-2px) scale(0.97); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .btn-ghost:active { transform: translateY(-2px) scale(0.97); }
+    .btn-glow:hover::before { animation-play-state: paused; opacity: 1; }
+}

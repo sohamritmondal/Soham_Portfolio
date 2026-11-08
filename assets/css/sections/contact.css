@@ -1,0 +1,50 @@
+/* ============================================================
+   sections/contact.css
+   Contact section: intro copy and info rows.
+   ============================================================ */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 60px;
+    align-items: start;
+}
+.contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+.contact-info > p { color: var(--muted); margin-bottom: 30px; }
+.contact-rows { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: var(--shadow-1);
+    transition: transform var(--dur) var(--ease-out), border-color var(--dur) ease;
+}
+.contact-row-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+.c-head { display: block; font-weight: 600; font-size: 0.9rem; font-family: var(--font-display); }
+.c-sub { display: block; color: var(--muted); font-size: 0.88rem; }
+
+@media (hover: hover) and (pointer: fine) {
+    .contact-row:hover { transform: translateX(6px); border-color: var(--accent-line); }
+}

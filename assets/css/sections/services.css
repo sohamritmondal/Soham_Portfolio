@@ -1,0 +1,56 @@
+/* ============================================================
+   sections/services.css
+   Service cards. Hover lift and tilt come from features/tilt.js
+   (transform); CSS handles border, shadow and the icon tile.
+   ============================================================ */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+.service-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    position: relative;
+    box-shadow: var(--shadow-1);
+    transition: border-color var(--dur) ease, box-shadow var(--dur) ease;
+}
+.service-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--highlight);
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    transition: transform var(--dur) var(--ease-out), background var(--dur) ease, color var(--dur) ease, box-shadow var(--dur) ease;
+}
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 10px;
+}
+.service-card p { color: var(--muted); font-size: 0.93rem; }
+
+@media (hover: hover) and (pointer: fine) {
+    .service-card:hover {
+        border-color: var(--accent-line);
+        box-shadow: var(--shadow-2), 0 0 0 1px rgba(79, 141, 255, 0.08);
+    }
+    .service-card:hover .service-icon {
+        transform: translateY(-2px) scale(1.04);
+        background: var(--accent-strong);
+        color: var(--on-accent);
+        box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+    }
+}
