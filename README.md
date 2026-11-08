@@ -1,4 +1,4 @@
-# sohamritmondal.dev — Portfolio
+# sohamritmondal.dev — Portfolio V1.0.1
 
 Personal portfolio of Soham Mondal. A static site (vanilla HTML / CSS / JS, no build step) deployed to
 GitHub Pages from the root of this repository.
